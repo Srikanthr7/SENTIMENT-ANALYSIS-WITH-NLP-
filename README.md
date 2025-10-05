@@ -1,38 +1,42 @@
-# Sentiment Analysis with NLP
+# Customer Reviews Sentiment Analysis
 
-This project demonstrates **Sentiment Analysis using Natural Language Processing (NLP)**.  
-It covers **text preprocessing**, **vectorization**, **model training**, and **evaluation** using Python, scikit-learn, and NLTK.
+This project performs **Sentiment Analysis on customer reviews** using **TF-IDF vectorization** and **Logistic Regression**.  
+It demonstrates **text preprocessing**, **model training**, **evaluation**, and **prediction** on new reviews.
 
 ---
 
 ## 📌 Features
 
-- Preprocess text data: lowercase, punctuation removal, tokenization, stopword removal, and lemmatization.
-- Vectorize text using **TF-IDF**.
-- Train a **Logistic Regression** classifier to predict sentiment.
-- Evaluate the model using accuracy, classification report, and confusion matrix.
-- Predict sentiment for custom input sentences.
+- Clean and preprocess text: lowercase, punctuation removal, and whitespace normalization.
+- Convert text into numerical features using **TF-IDF Vectorization**.
+- Train a **Logistic Regression** model to classify reviews as `positive` or `negative`.
+- Evaluate model performance with:
+  - Accuracy
+  - Classification Report (Precision, Recall, F1-score)
+  - Confusion Matrix
+- Make predictions on new customer reviews.
 
 ---
 
 ## 📂 Dataset
 
-- By default, the notebook uses **NLTK’s movie_reviews dataset** (binary positive/negative labels).  
-- You can also use a **custom CSV file** with two columns:
-  - `text`: The review text
-  - `label`: Sentiment (`positive` / `negative`)
+The dataset `customer_reviews.csv` contains two columns:
 
-Example CSV format:
+| review | sentiment |
+|--------|-----------|
+| The product is amazing! Exceeded my expectations. | positive |
+| Very bad quality, broke after one use. | negative |
+| Excellent service and fast delivery. | positive |
+| I am disappointed, the item arrived late. | negative |
 
-| text                                         | label    |
-|---------------------------------------------|----------|
-| The movie was fantastic!                     | positive |
-| The plot was dull and predictable.          | negative |
+- `review` → The text of the customer review.  
+- `sentiment` → The label: `positive` or `negative`.  
+
+> You can upload your own CSV with similar format in Google Colab or Jupyter.
 
 ---
 
-## 🛠️ Installation
+## 🛠 Installation
 
 ```bash
-# Install required libraries
-pip install nltk scikit-learn pandas matplotlib
+pip install pandas scikit-learn matplotlib joblib
